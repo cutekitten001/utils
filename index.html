@@ -1,20 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Utils</title>
-  </head>
-  <body>
-    <div class="container">
-        <h1>[ + ] utils [ + ]</h1>
-        <div class="button-group">
-            <a href="src/downloads/" download class="download-button">Firefox</a>
-            <a href="src/downloads/open_toolbar.bat" download class="download-button">Open toolbar</a>
-            <a href="src/downloads/kill_toolbar.bat" download class="download-button">Kill toolbar</a>
-            <a href="src/downloads/open_powershell.bat" download class="download-button">Open powershell</a>
-        </div>
-    </div>
-  </body>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Util Tools</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+	<header>
+		<h1>Util links</h1>
+		<nav>
+			<div class="menu-toggle">
+				<div class="burger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<ul class="nav-links">
+				<li><a href="https://geosite.local.srv.br/cobertura-ftth/?" target="_blank">Geosite</a></li>
+				<li><a href="https://geosite.local.srv.br/cobertura-ftth-simplificado" target="_blank">Geosite Simplificado</a></li>
+				<li><a href="https://passaporte.oi.intranet/" target="_blank">Passaporte</a></li>
+				<li><a href="http://gip.intranet/" target="_blank">GIP</a></li>
+				<li><a href="http://totalview.intranet/" target="_blank">Total View</a></li>
+				<li><a href="http://gente.oi.net.br" target="_blank">MinhaBTCC</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<section>
+		<div class="container">
+			<h2>Download Files</h2>
+			<div class="download-buttons">
+				<a href="src/downloads/" download><button>Firefox</button></a>
+				<a href="src/downloads/open_toolbar.bat" download><button>Open Toolbar</button></a>
+				<a href="src/downloads/kill_toolbar.bat" download><button>Kill Toolbar</button></a>
+				<a href="src/downloads/open_powershell.bat" download><button>Open PowerShell</button></a>
+				<a href="src/downloads/" download><button>Open Notepad</button></a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+			<p>&copy; utils by @cutekitten001 aka Dan</p>
+	</footer>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const menuToggle = document.querySelector('.menu-toggle');
+			const navLinks = document.querySelector('.nav-links');
+			menuToggle.addEventListener('click', function() {
+				navLinks.classList.toggle('nav-open');
+			});
+		});
+	</script>
+</body>
+
 </html>
