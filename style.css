@@ -1,44 +1,165 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background-color: #212121;
-    color: #ffffff;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 800px;
-    margin: 100px auto;
+
+header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 20px 0;
+	margin-bottom: 90px;
 }
 
-h1 {
-    font-size: 36px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.button-group {
+.nav-links {
+    list-style-type: none;
+    padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
 }
 
-.download-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 30px;
-    background-color: #4CAF50;
-    color: #ffffff;
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
     text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.download-button:hover {
-    background-color: #45a049;
+.nav-links a:hover {
+    background-color: #555;
+}
+
+.menu-toggle {
+    display: none; /* Inicialmente escondido */
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.burger {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    display: none; /* Inicialmente escondido */
+}
+
+.burger span {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.burger span:nth-child(1) {
+    top: 0;
+}
+
+.burger span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger span:nth-child(3) {
+    bottom: 0;
+}
+
+.burger.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+
+.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-open .nav-links li {
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.nav-open .nav-links li:last-child {
+    margin-bottom: 0;
+}
+
+.container {
+    padding: 30px;
+	text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.download-buttons {
+    margin-top: 20px;
+}
+
+.download-buttons a {
+    text-decoration: none;
+}
+
+.download-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #2196F3;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-buttons button:hover {
+    background-color: #64B5F6;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: auto; /* Faz o footer sempre ficar no final da página */
+}
+
+/* Mostra o burger-menu apenas em dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Exibe o burger-menu */
+    }
+
+    .nav-links {
+        display: none; /* Esconde os links da navegação */
+    }
+
+    .burger {
+        display: block; /* Exibe o ícone do burger-menu */
+    }
 }
